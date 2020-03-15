@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1061907135889",
+    "firebase_url": "https://foodproject-f4f9c.firebaseio.com",
+    "project_id": "foodproject-f4f9c",
+    "storage_bucket": "foodproject-f4f9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061907135889:android:e98eec2950fee14dcbae30",
+        "android_client_info": {
+          "package_name": "com.example.bancodealimentos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061907135889-e25408i4tmhs6hoo6c2u0binjsglkcj4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvEDGzbVyBaRr2UkzVgkA8NFTn36xDok0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061907135889-e25408i4tmhs6hoo6c2u0binjsglkcj4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

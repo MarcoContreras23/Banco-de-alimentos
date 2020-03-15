@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Banco de alimentos</string>
+    <string name="btnRegister">Registrarse</string>
+    <string name="btnLogin">Iniciar Sesión</string>
+    <string name="inputEmail">Correo Electrónico</string>
+    <string name="inputPass">Contraseña</string>
+    <string name="iconLog">Logo de inició de sesión en la aplicación</string>
+</resources>

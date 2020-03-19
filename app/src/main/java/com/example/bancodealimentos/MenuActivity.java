@@ -6,12 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MenuActivity extends AppCompatActivity {
 
     Button btnOut;
+    /*TextView user;
+    TextView roldata;*/
+
     private FirebaseAuth auth;
 
     @Override
@@ -20,6 +25,8 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         btnOut = (Button) findViewById(R.id.logout);
+
+        //  getData();
 
         btnOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,4 +37,16 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
     }
+
+    /*public void getData(){
+        Bundle extras  = getIntent().getExtras();
+        String username = extras.getString("username");
+        String rol = extras.getString("rol");
+
+        user = (TextView) findViewById(R.id.user_name_value);
+        user.setText(username);
+
+        roldata = (TextView) findViewById(R.id.rol_value);
+        roldata.setText(rol);
+    }*/
 }

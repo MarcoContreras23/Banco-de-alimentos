@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         validE = false;
         validP = false;
         auth = FirebaseAuth.getInstance();
+        //final FirebaseUser currentUser = auth.getCurrentUser();
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
                                     Intent i = new Intent(MainActivity.this, MenuActivity.class);
+                                    //i.putExtra("username", currentUser.getDisplayName());
+                                    //i.putExtra("rol", currentUser.getEmail());
                                     startActivity(i);
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Authentication failed.",

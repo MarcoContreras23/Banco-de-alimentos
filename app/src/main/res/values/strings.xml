@@ -23,4 +23,5 @@
     <string name="user_value_user">----------</string>
     <string name="rol_user">Rol</string>
     <string name="rol_value_user">----------</string>
+    <string name="welcome">Welcome</string>
 </resources>

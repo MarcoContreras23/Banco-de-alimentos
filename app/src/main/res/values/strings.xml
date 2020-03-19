@@ -12,4 +12,15 @@
     <string name="Name">Name</string>
     <string name="LastName">Last Name</string>
     <string name="confirmPass">Confirm Password</string>
+    <string name="send_notification">Send Notification</string>
+    <string name="user_name">User Name</string>
+    <string name="user_value">----------</string>
+    <string name="rol">Rol</string>
+    <string name="rol_value">----------</string>
+    <string name="logout">Logout</string>
+    <string name="user_name_user">User Name</string>
+    <string name="logoutUser">Logout User</string>
+    <string name="user_value_user">----------</string>
+    <string name="rol_user">Rol</string>
+    <string name="rol_value_user">----------</string>
 </resources>

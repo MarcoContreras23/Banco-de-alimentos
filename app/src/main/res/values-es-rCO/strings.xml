@@ -13,4 +13,15 @@
     <string name="Name">Nombres</string>
     <string name="LastName">Apellidos</string>
     <string name="confirmPass">Confirmar Contraseña</string>
+    <string name="send_notification">Enviar Notificacion</string>
+    <string name="user_name">Nombre de Usuario</string>
+    <string name="user_value">----------</string>
+    <string name="rol_value">----------</string>
+    <string name="rol">Rol</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="user_name_user">Nombre de Usuario</string>
+    <string name="logoutUser">Cerrar Sesión</string>
+    <string name="user_value_user">----------</string>
+    <string name="rol_user">Rol</string>
+    <string name="rol_value_user">----------</string>
 </resources>

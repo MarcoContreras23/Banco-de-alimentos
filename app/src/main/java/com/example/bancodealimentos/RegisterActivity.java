@@ -10,6 +10,9 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class RegisterActivity extends AppCompatActivity {
 
     EditText username;
@@ -25,6 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     Boolean user;
     Boolean nam;
     Boolean Repass;
+    private FirebaseAuth auth;
 
 
     @Override
@@ -45,6 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
         user = false;
         nam = false;
         Repass = false;
+        auth = FirebaseAuth.getInstance();
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +67,25 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String getText = username.getText().toString();
+                String Expr = "^[a-z0-9_-]{3,15}$";
 
+                if(getText.matches(Expr) || getText.length() == 0) {
+                    username.setBackgroundTintList(getResources().getColorStateList(R.color.colorPrimary));
+                    username.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_action_name, 0, 0, 0);
+                    if(getText.length() == 0) {
+                        user = false;
+                        validateRegister();
+                    } else {
+                        user = true;
+                        validateRegister();
+                    }
+                } else {
+                    username.setBackgroundTintList(getResources().getColorStateList(R.color.RED));
+                    username.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_action_name, 0, R.drawable.close, 0);
+                    user = false;
+                    validateRegister();
+                }
             }
 
             @Override
@@ -79,7 +102,19 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String getText = name.getText().toString();
 
+                if(getText.length() > 0 && getText.length() <= 8 || getText.length() == 0) {
+                    name.setBackgroundTintList(getResources().getColorStateList(R.color.colorPrimary));
+                    name.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_action_name, 0, 0, 0);
+                    nam = true;
+                    validateRegister();
+                } else {
+                    name.setBackgroundTintList(getResources().getColorStateList(R.color.RED));
+                    name.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_action_name, 0, R.drawable.close, 0);
+                    nam = false;
+                    validateRegister();
+                }
             }
 
             @Override
@@ -166,7 +201,19 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String getText = repassword.getText().toString();
 
+                if(getText.equals(password.getText().toString())) {
+                    repassword.setBackgroundTintList(getResources().getColorStateList(R.color.colorPrimary));
+                    repassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_action_name, 0, 0, 0);
+                    Repass = true;
+                    validateRegister();
+                } else {
+                    repassword.setBackgroundTintList(getResources().getColorStateList(R.color.RED));
+                    repassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_action_name, 0, R.drawable.close, 0);
+                    Repass = false;
+                    validateRegister();
+                }
             }
 
             @Override
@@ -174,6 +221,18 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = auth.getCurrentUser();
+        if(currentUser != null) {
+            Intent i = new Intent(RegisterActivity.this, MenuActivity.class);
+            startActivity(i);
+        } else {
+            validateRegister();
+        }
     }
 
     public void validateRegister() {

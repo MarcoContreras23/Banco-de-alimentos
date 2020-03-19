@@ -12,4 +12,5 @@
     <string name="User">Nombre de usuario</string>
     <string name="Name">Nombres</string>
     <string name="LastName">Apellidos</string>
+    <string name="confirmPass">Confirmar Contraseña</string>
 </resources>

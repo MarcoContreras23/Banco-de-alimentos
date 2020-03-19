@@ -11,4 +11,5 @@
     <string name="User">Username</string>
     <string name="Name">Name</string>
     <string name="LastName">Last Name</string>
+    <string name="confirmPass">Confirm Password</string>
 </resources>

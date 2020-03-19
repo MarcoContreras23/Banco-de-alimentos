@@ -32,7 +32,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent i = new Intent(MenuActivity.this, MainActivity.class);
+                Intent i = new Intent(MenuActivity.this, HomeActivity.class);
                 startActivity(i);
             }
         });

@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText Password;
     Boolean validE;
     Boolean validP;
+    Button register;
     private FirebaseAuth auth;
 
     @Override
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         Email = (EditText)findViewById(R.id.editText);
         btn = (Button) findViewById(R.id.button);
+        register = (Button) findViewById(R.id.button2);
         Password = (EditText) findViewById((R.id.editText2));
         validE = false;
         validP = false;
@@ -59,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }
                         });
+            }
+        });
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(i);
             }
         });
 

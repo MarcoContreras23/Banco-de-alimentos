@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MenuActivity extends AppCompatActivity {
 
     Button btnOut;
+    TextView username;
     private FirebaseAuth auth;
 
     @Override
@@ -20,6 +22,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         btnOut = (Button) findViewById(R.id.logout);
+        username = (TextView) findViewById(R.id.textView2);
 
         btnOut.setOnClickListener(new View.OnClickListener() {
             @Override

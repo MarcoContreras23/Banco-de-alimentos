@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
     Boolean user;
     Boolean nam;
     Boolean Repass;
+    Spinner dropdown;
     private FirebaseAuth auth;
 
 
@@ -49,6 +52,10 @@ public class RegisterActivity extends AppCompatActivity {
         user = false;
         nam = false;
         Repass = false;
+        dropdown = findViewById(R.id.role);
+        String[] items = new String[]{"Administrador", "Usuario"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
         auth = FirebaseAuth.getInstance();
 
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -227,6 +234,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = auth.getCurrentUser();
+        System.out.println(currentUser);
         if(currentUser != null) {
             Intent i = new Intent(RegisterActivity.this, MenuActivity.class);
             startActivity(i);

@@ -24,7 +24,7 @@
         tools:text="Logout" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/send"
         android:layout_width="183dp"
         android:layout_height="52dp"
         android:layout_marginTop="70dp"

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1061907135889-sgvqspduqr06dn0htsnln7s2et7bsc63.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bancodealimentos",
+            "certificate_hash": "8a30d57fdec74eaaa9f789ce08872a9dec334f90"
+          }
+        },
+        {
           "client_id": "1061907135889-e25408i4tmhs6hoo6c2u0binjsglkcj4.apps.googleusercontent.com",
           "client_type": 3
         }

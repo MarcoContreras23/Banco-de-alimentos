@@ -6,4 +6,6 @@
     <string name="inputEmail">Correo Electrónico</string>
     <string name="inputPass">Contraseña</string>
     <string name="iconLog">Logo de inició de sesión en la aplicación</string>
+    <string name="valid">Correo válido</string>
+    <string name="invalid">Correo Inválido</string>
 </resources>

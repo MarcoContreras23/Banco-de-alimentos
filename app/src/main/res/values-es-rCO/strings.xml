@@ -8,4 +8,8 @@
     <string name="iconLog">Logo de inició de sesión en la aplicación</string>
     <string name="valid">Correo válido</string>
     <string name="invalid">Correo Inválido</string>
+    <string name="cancel">Cancelar</string>
+    <string name="User">Nombre de usuario</string>
+    <string name="Name">Nombres</string>
+    <string name="LastName">Apellidos</string>
 </resources>

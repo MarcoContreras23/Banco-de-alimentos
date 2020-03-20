@@ -8,8 +8,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class HomeActivity extends AppCompatActivity {
     Button btn;
 
@@ -19,7 +17,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         btn = (Button) findViewById(R.id.button1);
-
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

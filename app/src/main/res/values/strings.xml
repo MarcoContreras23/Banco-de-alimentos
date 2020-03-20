@@ -14,9 +14,9 @@
     <string name="confirmPass">Confirm Password</string>
     <string name="send_notification">Send Notification</string>
     <string name="user_name">User Name</string>
-    <string name="user_value">----------</string>
+    <string name="user_value">Camilo Gomez</string>
     <string name="rol">Rol</string>
-    <string name="rol_value">----------</string>
+    <string name="rol_value">Manager</string>
     <string name="logout">Logout</string>
     <string name="user_name_user">User Name</string>
     <string name="logoutUser">Logout User</string>

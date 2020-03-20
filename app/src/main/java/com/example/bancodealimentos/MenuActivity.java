@@ -11,8 +11,14 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+/*
+ * Clase perteneciente a la vista de menú
+ */
 public class MenuActivity extends AppCompatActivity {
 
+    /*
+     * Definción de variables
+     */
     Button btnOut;
     TextView username;
     Button send;
@@ -20,6 +26,9 @@ public class MenuActivity extends AppCompatActivity {
     TextView title;
     private FirebaseAuth auth;
 
+    /*
+     * Método que ejecuta la primera instancia del código cuando se inicializa
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +37,9 @@ public class MenuActivity extends AppCompatActivity {
         btnOut = (Button) findViewById(R.id.logout);
         username = (TextView) findViewById(R.id.user_name_value);
 
+        /*
+         * Se valida el boton de cerrar sesión
+         */
         btnOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

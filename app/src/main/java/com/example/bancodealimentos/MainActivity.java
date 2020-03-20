@@ -18,8 +18,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/*
+ * Clase principal de la aplicación
+ */
 public class MainActivity extends AppCompatActivity {
 
+    /*
+    * Definción de las variables
+    */
     Button btn;
     EditText Email;
     EditText Password;
@@ -29,10 +35,17 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
 
     @Override
+    /*
+    * Método que se ejecuta cuando se crea la aplicación, o se ejecuta por primera vez que es el que congiene los
+    * listeners de los botones y de los campos de texto
+    */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*
+         * Definición de variables
+         */
         Email = (EditText)findViewById(R.id.editText);
         btn = (Button) findViewById(R.id.button);
         register = (Button) findViewById(R.id.button2);
@@ -42,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         //final FirebaseUser currentUser = auth.getCurrentUser();
 
+        /*
+        * Método que escucha los eventos del botón de ingreso
+        */
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        * Método que abre la vista de registro
+        */
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        /*
+        * Método que se ejecuta cuando hay algún cambio en el EditText de Email
+        * y dentro del listener se valida cuando cambia y que sea un email válido con una expresión regular
+         */
         Email.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -109,6 +133,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+         * Método que se ejecuta cuando hay algún cambio en el EditText de password
+         * y dentro del listener se valida cuando cambia y que sea un password válido con una expresión regular
+         */
         Password.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -146,6 +174,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*
+    * Función que se ejecuta cada que se inicia la aplicación para validar si esta o no en sesión
+     */
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -159,6 +190,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /*
+    * Método que valida si los campos de Email y Password cumplen las condiciones necesarias para poder
+    * iniciar sesión
+     */
     public void validateLogin() {
         if(validE && validP) {
             btn.setEnabled(true);

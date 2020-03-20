@@ -6,6 +6,9 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/*
+ * Clase que controla le vista de Bienvenida
+ */
 public class SplashActivity extends AppCompatActivity {
 
     @Override
@@ -13,6 +16,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        /*
+         * Método donde se ejecuta la vista de Bienvenida durante el tiempo asignado antes de ir a la siguiente vista
+         */
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

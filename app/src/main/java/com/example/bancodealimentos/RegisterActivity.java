@@ -15,8 +15,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/*
+ * Clase enlazada a la vista de registro
+ */
 public class RegisterActivity extends AppCompatActivity {
 
+    /*
+     * Definición de variables
+     */
     EditText username;
     EditText name;
     EditText lastName;
@@ -34,6 +40,9 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth auth;
 
 
+    /*
+     * Método que se ejecuta al iniciar la aplicación
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +67,9 @@ public class RegisterActivity extends AppCompatActivity {
         dropdown.setAdapter(adapter);
         auth = FirebaseAuth.getInstance();
 
+        /*
+         * Métdodo que retorna a la vista de home
+         */
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +78,9 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        /*
+         * Método que valida si el nombre de usuario es valido
+         */
         username.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -101,6 +116,9 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        /*
+         * Método que valida si el nombre ingresado es valido
+         */
         name.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -130,6 +148,9 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        /*
+         * Método que valida si el email de usuario es valido
+         */
         email.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -165,6 +186,9 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        /*
+         * Método que valida si el password de usuario es valido
+         */
         password.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -200,6 +224,9 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        /*
+         * Método que valida si el password y la confirmación son iguales
+         */
         repassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -230,6 +257,9 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    /*
+     * Método que valida si el usuario está en sesión
+     */
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -243,6 +273,9 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
+    /*
+     * Método que valida si  todos los campos cumplen las condiciones para habilitar el botón
+     */
     public void validateRegister() {
         if(Em && Pass && Repass && nam) {
             register.setEnabled(true);

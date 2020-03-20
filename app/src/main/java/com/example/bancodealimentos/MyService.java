@@ -7,6 +7,9 @@ import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 
+/*
+ * Clase que genera el servicio que obtiene el token de firebase
+ */
 public class MyService extends FirebaseMessagingService {
     String TAG = "Firebase MecAround: ";
     @Override

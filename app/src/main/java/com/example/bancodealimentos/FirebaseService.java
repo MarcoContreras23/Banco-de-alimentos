@@ -5,8 +5,16 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+/*
+ * Clase donde se ejecuta el servicio de firebase
+ */
 public class FirebaseService extends FirebaseMessagingService {
     String TAG = "Mensaje Firebase: ";
+
+    /**
+     * Método que obtiene el mensaje(notificación) desde el servicio de firebase y genera la notificación
+     * @param remoteMessage
+     */
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // ...

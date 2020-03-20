@@ -24,4 +24,6 @@
     <string name="rol_user">Rol</string>
     <string name="rol_value_user">----------</string>
     <string name="welcome">Welcome</string>
+    <string name="food_bank">Food Bank</string>
+    <string name="news">News</string>
 </resources>
